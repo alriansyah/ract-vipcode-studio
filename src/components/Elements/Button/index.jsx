@@ -1,7 +1,11 @@
-export default function Button (props) {
-    const { children = "....", classname = "bg-black" } = props;
+export default function Button(props) {
+    const { children = "....", classname = "bg-black", onClick = () => { }, type = "button" } = props;
     return (
-        <button className={`h-10 px-6 font-semibold rounded-md ${classname} text-white`} type="submit">
+        <button
+            className={`h-10 px-6 font-semibold rounded-md ${classname} text-white`}
+            type={type}
+            onClick={onClick}
+        >
             {children}
         </button>
     )
