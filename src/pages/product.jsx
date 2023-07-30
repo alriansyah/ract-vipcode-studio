@@ -5,12 +5,13 @@ import Counter from '../components/Fragments/Counter';
 import getProducts from '../services/product.service';
 import { data } from 'autoprefixer';
 import { getUsername } from '../services/auth.service';
+import { useLogin } from '../hooks/useLogin';
 
 export default function ProductPage() {
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [products, setProducts] = useState([]);
-    const [username, setUsername] = useState("");
+    const username = useLogin();
 
     useEffect(() => {
         setCart(JSON.parse(localStorage.getItem("cart")) || []);
@@ -21,15 +22,6 @@ export default function ProductPage() {
             setProducts(data);
         })
     }, []);
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) {
-            setUsername(getUsername(token));
-        } else {
-            window.location.href = "/login";
-        }
-    }, [])
 
     useEffect(() => {
         if (products.length > 0 && cart.length > 0) {

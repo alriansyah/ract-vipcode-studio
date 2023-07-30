@@ -9,11 +9,6 @@ export default function FormLogin() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // localStorage.setItem('email', event.target.email.value);
-    // localStorage.setItem('password', event.target.password.value);
-    // console.log(event.target.email.value);
-    // console.log(event.target.password.value);
-    // window.location.href = "/products";
     const data = {
       username: event.target.username.value,
       password: event.target.password.value,
