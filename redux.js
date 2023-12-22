@@ -1,5 +1,7 @@
 import { legacy_createStore } from "redux";
 
+// run terminal : node redux
+
 // reducer
 const cartReducer = (state = {
     cart: [{ id: 1, qty: 1 }],

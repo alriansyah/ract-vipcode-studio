@@ -1,5 +1,7 @@
 import toolkit from "@reduxjs/toolkit";
 
+// run terminal : node toolkit
+
 const { configureStore, createAction, createReducer } = toolkit;
 
 
